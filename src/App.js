@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Meal from './components/Meal/Meal';
 
 function App() {
   const [meals, setMeals] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
@@ -14,7 +16,8 @@ function App() {
   }, []);
   
   const handleAddToCart = (meal) => {
-    console.log(meal);
+    const newCart = [...cart, meal];
+    setCart(newCart);
   }
 
   
@@ -29,8 +32,13 @@ function App() {
         
         </div>
         <div className='order-container'>
-        <div className='order-info'>
-          <h3>Order Info</h3>
+        <div className='order-info'> 
+          <h3>Order Info</h3>         
+          {
+            cart.map(item => {
+              return <Cart key={item.idMeal} item={item}></Cart>
+            }
+            )}
           
         </div>
         </div>

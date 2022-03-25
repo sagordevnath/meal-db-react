@@ -2,5 +2,23 @@
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    
+    box-shadow: 5px 5px 5px 5px #ccc,
+    -2px -2px 2px 2px #ccc;
+                 
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;    
+}
+.btn:hover {
+    background-color: #00ff0d;
+    color: black;
 }

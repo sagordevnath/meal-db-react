@@ -49,6 +49,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(127, 255, 159);
+  box-shadow: 5px 5px 5px 5px #ccc;
 }
 .meals-container img{
   width: 100%;
@@ -58,11 +59,14 @@
   width: 20%;
   background-color: aquamarine;
   padding: 20px;
+  
 }
 .order-info {
   position: sticky;
-  top: 0; 
+  top: 0;
+  
 }
 .order-info h3{
   text-align: center;
+  margin-bottom: 20px;
 }
