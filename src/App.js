@@ -10,16 +10,31 @@ function App() {
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
       .then(response => response.json())
       .then(data => setMeals(data.meals));
+      
   }, []);
+  
+  const handleAddToCart = (meal) => {
+    console.log(meal);
+  }
 
   
   return (
     <div>
       <Header></Header>  
-      {
-        meals.map(meal => <Meal key={meal.idMeal} meal={meal}></Meal>)
-      }
-      
+      <div className='main-container'>
+        <div className='meals-container'>
+          {
+            meals.map(meal => <Meal key={meal.idMeal} meal={meal} handleAddToCart={handleAddToCart}></Meal>)
+          }
+        
+        </div>
+        <div className='order-container'>
+        <div className='order-info'>
+          <h3>Order Info</h3>
+          
+        </div>
+        </div>
+      </div>
 
     </div>
   );
